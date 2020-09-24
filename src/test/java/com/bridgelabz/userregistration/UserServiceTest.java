@@ -68,5 +68,16 @@ public class UserServiceTest {
 			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
 		}
 	}
+
+	@Test
+	public void givenPhoneNo_whenIsNotProper_shouldGiveAnException() {
+		try {
+			User user = new User("Tejaswini", "Kulkarni", "Teji+1998", "abc.def@gmail.com",
+					  "9920275");
+			userValidation.fieldValidate(user);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_PHONE_NUMBER, e.exceptionType);
+		}
+	}
 }
 
