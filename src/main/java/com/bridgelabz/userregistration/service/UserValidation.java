@@ -14,6 +14,7 @@ public class UserValidation {
 	public static String lastName;
 	public static String emailId;
 	public static String password;
+	public static String phoneNo;
 
 	public static User getUserName() {
 		User user = new User();
@@ -51,6 +52,13 @@ public class UserValidation {
 				emailId = UserInput.getString();
 			}
 			user.setEmailId(emailId);
+			System.out.println("Enter the Mobile Number");
+			phoneNo = UserInput.getString();
+			while (!UserValidation.phoneNoPatternCheck(phoneNo)) {
+				System.out.println("Enter the valid phone number");
+				phoneNo = UserInput.getString();
+			}
+			user.setPhoneNo(phoneNo);
 		} catch (NullPointerException | InputMismatchException e) {
 			System.out.println(e);
 		}
@@ -88,6 +96,12 @@ public class UserValidation {
 		return matchString.matches();
 	}
 
+	public static boolean phoneNoPatternCheck(String stringCheck) {
+		Pattern pattern = Pattern.compile("^[0-9]{1}[0-9]{9}$");
+		Matcher matchString = pattern.matcher(stringCheck);
+		return matchString.matches();
+	}
+
 	public static String fieldValidate(User user) throws UserValidationException {
 
 		if (!UserValidation.namePatternCheck(user.getFirstName())) {
@@ -101,6 +115,9 @@ public class UserValidation {
 		}
 		if (!UserValidation.emailPatternCheck(user.getEmailId())) {
 			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_EMAIL_ID, "Invalid Email");
+		}
+		if (!UserValidation.phoneNoPatternCheck(user.getPhoneNo())) {
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_PHONE_NUMBER, "Invalid Number");
 		}
 		return "Registration SuccessFul";
 	}

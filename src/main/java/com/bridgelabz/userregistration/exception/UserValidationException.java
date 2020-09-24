@@ -8,7 +8,8 @@ public class UserValidationException extends Exception {
 		INVALID_PASSWORD,
 		INVALID_EMAIL_ID,
 		INVALID_FIRST_NAME,
-		INVALID_LAST_NAME
+		INVALID_LAST_NAME,
+		INVALID_PHONE_NUMBER
 	}
 
 	public UserValidationException(ExceptionType exceptionType, String message) {
