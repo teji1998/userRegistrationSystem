@@ -1,5 +1,6 @@
-package com.bridgelabz.userregistration;
+package com.bridgelabz.userregistration.Repository;
 
+import com.bridgelabz.userregistration.service.UserOperations;
 import com.bridgelabz.userregistration.model.User;
 
 import java.sql.Connection;

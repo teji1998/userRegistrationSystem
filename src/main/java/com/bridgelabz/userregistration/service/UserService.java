@@ -1,4 +1,4 @@
-package com.bridgelabz.userregistration;
+package com.bridgelabz.userregistration.service;
 
 import com.bridgelabz.userregistration.model.User;
 

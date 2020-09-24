@@ -1,6 +1,8 @@
 package com.bridgelabz.userregistration;
 
+import com.bridgelabz.userregistration.exception.UserValidationException;
 import com.bridgelabz.userregistration.model.User;
+import com.bridgelabz.userregistration.service.UserValidation;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

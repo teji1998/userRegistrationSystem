@@ -1,4 +1,4 @@
-package com.bridgelabz.userregistration;
+package com.bridgelabz.userregistration.exception;
 
 public class UserValidationException extends Exception {
 

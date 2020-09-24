@@ -1,6 +1,8 @@
-package com.bridgelabz.userregistration;
+package com.bridgelabz.userregistration.service;
 
+import com.bridgelabz.userregistration.exception.UserValidationException;
 import com.bridgelabz.userregistration.model.User;
+import com.bridgelabz.userregistration.utility.UserInput;
 
 import java.util.InputMismatchException;
 import java.util.regex.Matcher;
