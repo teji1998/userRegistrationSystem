@@ -21,5 +21,14 @@ public class UserServiceTest {
 		Assert.assertEquals("Registration SuccessFul", message);
 	}
 
+	@Test
+	public void givenFirstName_whenIsNotProper_shouldGiveAnException() {
+		try {
+			User user = new User("Te", "Kulkarni", "Tejaswini$1998", "tejasvini.bts@gmail.com");
+			userValidation.fieldValidate(user);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_FIRST_NAME, e.exceptionType);
+		}
+	}
 }
 
