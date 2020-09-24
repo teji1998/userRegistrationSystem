@@ -30,5 +30,15 @@ public class UserServiceTest {
 			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_FIRST_NAME, e.exceptionType);
 		}
 	}
+
+	@Test
+	public void givenLastName_whenIsNotProper_shouldGiveAnException() {
+		try {
+			User user = new User("Tejaswini", "Ku", "Tejaswini$1998", "tejasvini.bts@gmail.com");
+			userValidation.fieldValidate(user);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_LAST_NAME, e.exceptionType);
+		}
+	}
 }
 
