@@ -10,7 +10,7 @@ public class UserServiceTest {
 	UserValidation userValidation;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		userValidation = new UserValidation();
 	}
 
