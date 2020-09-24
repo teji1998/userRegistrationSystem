@@ -60,7 +60,5 @@ public class UserServiceTest {
 			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_PASSWORD, e.exceptionType);
 		}
 	}
-
-
 }
 
