@@ -68,21 +68,21 @@ public class UserValidation {
 		return user;
 	}
 
-	public static boolean namePatternCheck(String checkString) {
+	public static boolean namePatternCheck(String stringCheck) {
 		Pattern stringChecker = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,}");
-		Matcher matchString = stringChecker.matcher(checkString);
+		Matcher matchString = stringChecker.matcher(stringCheck);
 		return matchString.matches();
 	}
 
-	public static boolean passwordPatternCheck(String checkString) {
-		Pattern pattern = Pattern.compile("(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&!]){1}.{8,}");
-		Matcher matchString = pattern.matcher(checkString);
+	public static boolean passwordPatternCheck(String stringCheck) {
+		Pattern pattern = Pattern.compile("^(?=.*[A-Z].*)(?=.*[0-9].*)(?=.*[@#$%^&*+_].*)[0-9a-zA-Z@#$%^&*+_]{8,}");
+		Matcher matchString = pattern.matcher(stringCheck);
 		return matchString.matches();
 	}
 
-	public static boolean emailPatternCheck(String checkString) {
-		Pattern pattern = Pattern.compile("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$");
-		Matcher matchString = pattern.matcher(checkString);
+	public static boolean emailPatternCheck(String stringCheck) {
+		Pattern pattern = Pattern.compile("^[0-9a-z]+[+_.-]?[0-9a-z]+[@][0-9a-z]+[.][a-z]{2,}");
+		Matcher matchString = pattern.matcher(stringCheck);
 		return matchString.matches();
 	}
 
