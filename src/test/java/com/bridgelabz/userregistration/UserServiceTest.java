@@ -40,5 +40,15 @@ public class UserServiceTest {
 			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_LAST_NAME, e.exceptionType);
 		}
 	}
+
+	@Test
+	public void givenEmailId_whenIsNotProper_shouldGiveAnException() {
+		try {
+			User user = new User("Tejaswini", "Kulkarni", "Tejaswini$1998", "@gmail.com");
+			userValidation.fieldValidate(user);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.INVALID_EMAIL_ID, e.exceptionType);
+		}
+	}
 }
 
