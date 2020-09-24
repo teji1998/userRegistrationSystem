@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class UserRepository {
 
-	public final static String DATABASE_URL = "jdbc:mysql://localhost:3306/world";
+	public final static String DATABASE_URL = "jdbc:mysql://localhost:3306/demo";
 	public final static String DATABASE_USERNAME = "root";
 	public final static String DATABASE_PASSWORD = "teju1998";
 

@@ -74,10 +74,6 @@ public class User {
 				  Objects.equals(password, user.password);
 	}
 
-	@Override
-	public int hashCode() {
-		return 0;
-	}
 }
 
 

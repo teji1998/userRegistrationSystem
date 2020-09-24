@@ -10,11 +10,11 @@ import java.sql.SQLException;
 
 public class UserDatabaseOperations implements UserOperations {
 
-	public static final String INSERT_QUERY = "insert into UserDetails( first_name, last_name, password, emailId ) values (?,?,?,?,?)";
-	private static final String SELECT_QUERY = "select * from UserDetails";
-	private static final String QUERY = "select count(*) AS total from UserDetails where first_name = ? and last_name = ?";
-	private static final String UPDATE_QUERY = "Update UserDetails set password = ?, emailId = ?, phone_number = ? where first_name = ? and last_name = ?";
-	private static final String DELETE_QUERY = "delete from UserDetails where first_name = ? and last_name = ?";
+	public static final String INSERT_QUERY = "insert into user( first_name, last_name, password, emailId ) values (?,?,?,?,?)";
+	private static final String SELECT_QUERY = "select * from user";
+	private static final String QUERY = "select count(*) AS total from user where first_name = ? and last_name = ?";
+	private static final String UPDATE_QUERY = "Update user set password = ?, emailId = ?, phone_number = ? where first_name = ? and last_name = ?";
+	private static final String DELETE_QUERY = "delete from user where first_name = ? and last_name = ?";
 
 	public void addUser(User user) {
 		try (Connection con = UserRepository.getConnection();
