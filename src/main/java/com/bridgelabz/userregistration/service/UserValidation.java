@@ -105,19 +105,25 @@ public class UserValidation {
 	public static String fieldValidate(User user) throws UserValidationException {
 
 		if (!UserValidation.namePatternCheck(user.getFirstName())) {
-			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_FIRST_NAME, "Invalid First Name");
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_FIRST_NAME,
+					  "Invalid First Name");
 		}
 		if (!UserValidation.namePatternCheck(user.getLastName())) {
-			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_LAST_NAME, "Invalid Last Name");
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_LAST_NAME,
+					  "Invalid Last Name");
 		}
 		if (!UserValidation.passwordPatternCheck(user.getPassword())) {
-			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_PASSWORD,
+					  "Invalid Password");
 		}
+
 		if (!UserValidation.emailPatternCheck(user.getEmailId())) {
-			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_EMAIL_ID, "Invalid Email");
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_EMAIL_ID,
+					  "Invalid Email");
 		}
 		if (!UserValidation.phoneNoPatternCheck(user.getPhoneNo())) {
-			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_PHONE_NUMBER, "Invalid Number");
+			throw new UserValidationException(UserValidationException.ExceptionType.INVALID_PHONE_NUMBER,
+					  "Invalid Number");
 		}
 		return "Registration SuccessFul";
 	}
